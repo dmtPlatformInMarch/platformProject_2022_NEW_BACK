@@ -1,0 +1,1100 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/fragments.html :: head"></head>
+
+<body>
+<section id="wrapper">
+    <section class="headers">
+        <section class="header desktop-header">
+            <div class="main-header">
+                <div class="main-header-container">
+                    <div class="main-header-left">
+                        <div class="main-logo">
+                            <img src="./logo.png" alt="">
+                        </div>
+                        <div class="main-header-left-menus">
+                            <a href="#" class="main-header-menu active">작업</a>
+                            <a href="#" class="main-header-menu">매뉴얼</a>
+                            <a href="#" class="main-header-menu">커뮤니티</a>
+                        </div>
+                        <div class="main-search-form">
+                            <div class="main-search-wrapper">
+                                <input type="search" placeholder="작업 검색" />
+                                <a href="#"><i class="fas fa-search"></i></a>
+                                <span class="main-search-btn">
+                                        <i class="fas fa-times-circle"></i>
+                                    </span>
+                            </div>
+                            <div class="my-search-list-container">
+                                <div class="my-searcch-list">
+                                    <div class="my-search-list-setting">
+                                        <div>최근 검색어</div>
+                                        <span>전체 삭제</span>
+                                    </div>
+                                    <div class="my-search-items">
+                                        <li class="my-search-item">번역
+                                            <i class="fas fa-times"></i>
+                                        </li>
+                                        <li class="my-search-item">불어
+                                            <i class="fas fa-times"></i>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-header-right-menus">
+                        <div class="main-header-icon-wrapper has-contents">
+                            <a href="#"> <i class="fas fa-bell"><div class="icon-contents"></div></i></a>
+                        </div>
+                        <div class="main-header-icon-wrapper">
+                            <a href="#">  <i class="fas fa-envelope active"><div class="icon-contents"></div></i></a>
+                        </div>
+                        <div class="main-header-icon-wrapper">
+                            <a href="#">  <i class="fas fa-star"><div class="icon-contents"></div></i></a>
+                        </div>
+
+
+                        <div class="main-header-menu my-profile">
+                            <a href="#">내 프로필</a>
+                            <i class="fas fa-chevron-down"></i>
+
+                            <div class="main-header-dropdown">
+                                <div class="main-header-dropdown-wrapper first">
+                                    <div class="main-header-dropdown-item">
+                                        <a href="#">마이페이지</a>
+                                    </div>
+                                    <div class="main-header-dropdown-item">
+                                        <a href="#">내 작업</a>
+                                    </div>
+                                    <div class="main-header-dropdown-item">
+                                        <a href="#">내 이력서</a>
+                                    </div>
+                                    <div class="main-header-dropdown-item">
+                                        <a href="#">고객센터</a>
+                                    </div>
+                                </div>
+                                <div class="main-header-dropdown-wrapper">
+                                    <div class="main-header-dropdown-item">
+                                        <a href="#">로그아웃</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="sub-header">
+                <div class="sub-header-wrapper active">
+
+                </div>
+                <div class="sub-header-wrapper active">
+                    <div class="sub-header-container">
+                        <div class="sub-header-menu-item not-last active">
+                            <a href="#">신규 작업</a>
+                        </div>
+                        <div class="sub-header-menu-item">
+                            <a href="#">베스트 작업</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-header-wrapper second">
+                    <div class="sub-header-container">
+                        <div class="sub-header-menu-item not-last active">
+                            <a href="#">매뉴얼</a>
+                        </div>
+                        <div class="sub-header-menu-item not-last">
+                            <a href="#">공지</a>
+                        </div>
+                        <div class="sub-header-menu-item">
+                            <a href="#">문의</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-header-wrapper third">
+                    <div class="sub-header-container">
+                        <div class="sub-header-menu-item not-last">
+                            <a href="#">작업후기</a>
+                        </div>
+                        <div class="sub-header-menu-item active">
+                            <a href="#">커뮤니티</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="header mobile-header">
+            <div class="main-header">
+
+                <div class="main-header-container">
+                    <div class="main-logos">
+                        <div class="main-logo">
+                            <img src="./logo.png" alt="">
+                        </div>
+                        <div class="main-nav-logo">
+                            <a href="#"><i class="fas fa-bars"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="main-mobile-nav">
+                        <div class="main-header-left">
+                            <div class="main-header-left-menus">
+                                <div class="main-left-menu-wrapper active">
+                                    <div class="main-left-menu-header">
+                                        <a href="#" class="main-header-menu">작업</a>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+
+                                    <div class="sub-header-wrapper">
+                                        <div class="sub-header-container">
+                                            <div class="sub-header-menu-item active">
+                                                <a href="#">신규 작업</a>
+                                            </div>
+                                            <div class="sub-header-menu-item">
+                                                <a href="#">베스트 작업</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-left-menu-wrapper">
+                                    <div class="main-left-menu-header">
+                                        <a href="#" class="main-header-menu">매뉴얼</a>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="sub-header-wrapper">
+                                        <div class="sub-header-container">
+                                            <div class="sub-header-menu-item">
+                                                <a href="#">매뉴얼</a>
+                                            </div>
+                                            <div class="sub-header-menu-item">
+                                                <a href="#">공지</a>
+                                            </div>
+                                            <div class="sub-header-menu-item">
+                                                <a href="#">문의</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-left-menu-wrapper">
+                                    <div class="main-left-menu-header">
+                                        <a href="#" class="main-header-menu">커뮤니티</a>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="sub-header-wrapper">
+                                        <div class="sub-header-container">
+                                            <div class="sub-header-menu-item">
+                                                <a href="#">작업후기</a>
+                                            </div>
+                                            <div class="sub-header-menu-item">
+                                                <a href="#">커뮤니티</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-search-form">
+                                <div class="main-search-wrapper">
+                                    <input type="search" placeholder="작업 검색" />
+                                    <a href="#"><i class="fas fa-search"></i></a>
+                                    <span class="main-search-btn">
+                                            <i class="fas fa-times-circle"></i>
+                                        </span>
+                                </div>
+                                <div class="my-search-list-container">
+                                    <div class="my-searcch-list">
+                                        <div class="my-search-list-setting">
+                                            <div>최근 검색어</div>
+                                            <span>전체 삭제</span>
+                                        </div>
+                                        <div class="my-search-items">
+                                            <li class="my-search-item">번역
+                                                <i class="fas fa-times"></i>
+                                            </li>
+                                            <li class="my-search-item">불어
+                                                <i class="fas fa-times"></i>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main-header-right-menus">
+                            <div class="main-header-icon-wrapper active">
+                                <a href="#"> 알림 </a>
+                            </div>
+                            <div class="main-header-icon-wrapper">
+                                <a href="#"> 쪽지 </a>
+                            </div>
+                            <div class="main-header-icon-wrapper">
+                                <a href="#">  즐겨찾기 </a>
+                            </div>
+
+
+                            <div class="main-header-menu my-profile">
+                                <a href="#">내 프로필</a>
+                                <i class="fas fa-chevron-down"></i>
+
+                                <div class="main-header-dropdown">
+                                    <div class="main-header-dropdown-wrapper first">
+                                        <div class="main-header-dropdown-item">
+                                            <a href="#">마이페이지</a>
+                                        </div>
+                                        <div class="main-header-dropdown-item">
+                                            <a href="#">내 작업</a>
+                                        </div>
+                                        <div class="main-header-dropdown-item">
+                                            <a href="#">내 이력서</a>
+                                        </div>
+                                        <div class="main-header-dropdown-item">
+                                            <a href="#">고객센터</a>
+                                        </div>
+                                    </div>
+                                    <div class="main-header-dropdown-wrapper">
+                                        <div class="main-header-dropdown-item">
+                                            <a href="#">로그아웃</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+    </section>
+
+    <section class="app-content">
+        <!-- active -->
+        <section class="category-section active">
+            <div class="category-section-wrapper">
+                <div class="category-section-header">
+                    <!-- active -->
+                    <i class="fas fa-chevron-circle-left category-header-i active"></i>
+                </div>
+                <div class="category-section-menus">
+                    <div class="category-section-menu-wrapper">
+                        <div class="category-section-main-menu">
+                            <a href="#">전체</a>
+                        </div>
+                    </div>
+                    <div class="category-section-menu-wrapper">
+                        <div class="category-section-main-menu active">
+                            <a href="#">번역</a>
+                            <i class="fas fa-angle-up"></i>
+                        </div>
+                        <div class="category-section-sub-menus">
+                            <div class="category-section-sub-menu active">
+                                <a href="#">프랑스어</a>
+                            </div>
+                            <div class="category-section-sub-menu">
+                                <a href="#">영어</a>
+                            </div>
+                            <div class="category-section-sub-menu">
+                                <a href="#">중국어</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-section-menu-wrapper">
+                        <div class="category-section-main-menu">
+                            <a href="#">녹음</a>
+                            <i class="fas fa-angle-up"></i>
+                        </div>
+                        <div class="category-section-sub-menus">
+                            <div class="category-section-sub-menu">
+                                <a href="#">녹음</a>
+                            </div>
+                            <div class="category-section-sub-menu">
+                                <a href="#">전사</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <section class="main-content-header-section">
+                <div class="main-content-header-wrapper">
+                    <div class="main-content-header-title">
+                        전체 작업들
+                    </div>
+                    <div class="card-list-category-container">
+                        <div class="card-list-category-wrapper">
+                            <div class="card-list-category-title">
+                                View
+                            </div>
+                            <label class="switch-button">
+                                <input type="checkbox"/>
+                                <span class="onoff-switch"></span>
+                            </label>
+                        </div>
+
+                        <div class="card-list-category-wrapper">
+                            <div class="card-list-category-title">
+                                정렬
+                            </div>
+                            <div class="dropdown show">
+                                <button class="card-list-category-value form-select " type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span>최신 순</span>
+                                </button>
+
+                                <div class="dropdown-menu card-list-category-value-down" aria-labelledby="dropdownMenuButton">
+                                    <!-- th:classappend="${#strings.equals(category, 'all')}? active" th:href="@{'/myprojects?status=' + ${status} + '&category=all'}"-->
+                                    <a class="dropdown-item"  >
+                                        최신 순
+                                    </a>
+                                    <a class="dropdown-item" href="#" >
+                                        오래된 순
+                                    </a>
+                                    <!-- th:classappend="${#strings.equals(category, 'all')}? active" th:href="@{'/myprojects?status=' + ${status} + '&category=all'}"-->
+                                    <a class="dropdown-item"  >
+                                        즐겨찾는 순
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="list-container">
+                <section class="card-view-container">
+                    <div class="card-view-wrapper ">
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-wrapper">
+                            <div class="card-custom-header">
+                                <div class="card-header-field">
+                                    <span>분야</span>
+                                </div>
+                                <div class="card-header-favorite-cnt">
+                                    <i class="fas fa-star"></i>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body-title">
+                                    <span>작업 제목 작업 제목 작업 제목 작업 제목 작업 제목 dddd</span>
+                                </div>
+                                <div class="card-body-letterpress">
+                                    <span>긴 작업 설명이 계속 이어지게 보였으면 좋겠는데, HTML을 어떻게 설정하면 되려나 HTML을 어떻게 설정하면 되말줄임표 없어? 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 </span>
+                                </div>
+                            </div>
+                            <div class="card-tail">
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-period">
+                                        <span>220201</span>
+                                        ~
+                                        <span>220221</span>
+                                    </div>
+                                    <div class="card-tail-payment">
+                                        <i class="fas fa-coins"></i>
+                                        <span>20</span>
+                                    </div>
+                                </div>
+                                <div class="card-tail-wrapper">
+                                    <div class="card-tail-btns">
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-briefcase"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="card-tail-btn">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tail-view-btn">
+                                        <button>상세 보기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="row-view-container active">
+
+                    <div class="row-list">
+                        <div class="row-package">
+                            <div class="row-wrapper">
+                                <div class="row-position">
+                                    <div class="row-header">
+
+                                        <div class="row-header-favorite-cnt">
+                                            <i class="fas fa-star"></i>
+                                            <span>10</span>
+                                        </div>
+
+                                        <div class="row-header-field">
+                                            <span>분야</span>
+                                        </div>
+                                    </div>
+                                    <div class="row-body">
+                                        <div class="row-body-title">
+                                            작업 제목 작업 제목 작업 제목 작업 제목 작업 제목
+                                        </div>
+                                        <div class="row-body-wrapper">
+                                            <div class="row-body-period">
+                                                <span>220201</span>
+                                                ~
+                                                <span>220221</span>
+                                            </div>
+                                            <div class="row-body-payment">
+                                                <i class="fas fa-coins"></i>
+                                                <span>20</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-tail">
+                                    <div class="row-tail-wrapper">
+                                        <div class="row-tail-btns">
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-file-word"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row-tail-view-btn">
+                                            <button>상세 보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-letterpress-space">
+                                설명설명설명설명설명설명설명설명 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 남산 위에 저 소나무 철갑을 두른 듯 바람서리 불변함은 우리 기상일세 무궁화 삼천
+                            </div>
+                        </div>
+
+                        <div class="row-package">
+                            <div class="row-wrapper">
+                                <div class="row-position">
+                                    <div class="row-header">
+
+                                        <div class="row-header-favorite-cnt">
+                                            <i class="fas fa-star"></i>
+                                            <span>10</span>
+                                        </div>
+
+                                        <div class="row-header-field">
+                                            <span>분야</span>
+                                        </div>
+                                    </div>
+                                    <div class="row-body">
+                                        <div class="row-body-title">
+                                            작업 제목 작업 제목 작업 제목 작업 제목 작업 제목
+                                        </div>
+                                        <div class="row-body-wrapper">
+                                            <div class="row-body-period">
+                                                <span>220201</span>
+                                                ~
+                                                <span>220221</span>
+                                            </div>
+                                            <div class="row-body-payment">
+                                                <i class="fas fa-coins"></i>
+                                                <span>20</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-tail">
+                                    <div class="row-tail-wrapper">
+                                        <div class="row-tail-btns">
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-file-word"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row-tail-view-btn">
+                                            <button>상세 보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-letterpress-space">
+                                설명설명설명설명설명설명설명설명 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 남산 위에 저 소나무 철갑을 두른 듯 바람서리 불변함은 우리 기상일세 무궁화 삼천
+                            </div>
+                        </div>
+
+                        <div class="row-package">
+                            <div class="row-wrapper">
+                                <div class="row-position">
+                                    <div class="row-header">
+
+                                        <div class="row-header-favorite-cnt">
+                                            <i class="fas fa-star"></i>
+                                            <span>10</span>
+                                        </div>
+
+                                        <div class="row-header-field">
+                                            <span>분야</span>
+                                        </div>
+                                    </div>
+                                    <div class="row-body">
+                                        <div class="row-body-title">
+                                            작업 제목 작업 제목 작업 제목 작업 제목 작업 제목
+                                        </div>
+                                        <div class="row-body-wrapper">
+                                            <div class="row-body-period">
+                                                <span>220201</span>
+                                                ~
+                                                <span>220221</span>
+                                            </div>
+                                            <div class="row-body-payment">
+                                                <i class="fas fa-coins"></i>
+                                                <span>20</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-tail">
+                                    <div class="row-tail-wrapper">
+                                        <div class="row-tail-btns">
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="row-tail-btn">
+                                                <i class="fas fa-file-word"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row-tail-view-btn">
+                                            <button>상세 보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-letterpress-space">
+                                설명설명설명설명설명설명설명설명 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 남산 위에 저 소나무 철갑을 두른 듯 바람서리 불변함은 우리 기상일세 무궁화 삼천
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination-container">
+                        <div class="paigination-wrapper">
+                            <span class="pagination-arrow"><</span>
+                            <span class="pagination-num">1</span>
+                            <span class="pagination-num active">2</span>
+                            <span class="pagination-num">3</span>
+                            <span class="pagination-num">4</span>
+                            <span class="pagination-num">5</span>
+                            <span class="pagination-arrow">></span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-menus">
+                <div class="footer-menu  not-last"><a href="#">이용약관</a></div>
+                <div class="footer-menu"><a href="#">개인정보처리방침</a></div>
+            </div>
+            <div class="footer-explains">
+                <div class="footer-pos">
+                    <div class="footer-explain not-last">
+                        회사명 : 디엠티랩스
+                    </div>
+                    <div class="footer-explain">
+                        주소 : 서울특별시 용산구 한강대로 40길 18, 404호 (04386, 한강로2가 144-2 다이빌딩)
+                    </div>
+                </div>
+                <div class="footer-pos">
+                    <div class="footer-explain">
+                        고객센터 : help@dmtlabs.co.kr
+                    </div>
+                    <div class="footer-explain">
+                        02-794-5333 (평일 9:00 ~ 18:00, 주말 & 공휴일 제외)
+                    </div>
+                </div>
+                <div class="footer-pos">
+                    <div class="footer-explain">
+                        Copyright ⓒ 2022, DMT Labs All rights reserved.
+                    </div>
+                </div>
+                <div class="footer-link-wrapper">
+                    <div class="footer-link-pos">
+                        <div class="footer-link">
+                            <a href="http://dmtlabs.co.kr/">회사 사이트 바로가기</a>
+                        </div>
+                    </div>
+                    <div class="footer-link-pos">
+                        <div class="footer-link">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+</body>
+</html>

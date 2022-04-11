@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header.html :: header" />
+<body>
+<section id="wrapper">
+
+    <section th:replace="common/main-nav.html :: main-nav" />
+    <section class="app-content">
+
+        <section class="main-content">
+            <div class="my-page-wrapper active my-page-caution-container login-container">
+
+                <div class="my-page-title-wrapper">
+                    <div class="my-page-title">
+                        <span class="main-title">로그인</span>
+                    </div>
+                </div>
+
+                <div class="my-page-title-wrapper login-wrapper">
+                    <div class="resume-write-wrapper login-content-wrapper">
+                        <div class="resume-write-title">
+                            <span><i class="fas fa-sign-in-alt"></i>이메일</span>
+                            <span>가입하신 이메일을 입력해주세요.</span>
+                        </div>
+                        <div class="resume-write-content">
+                            <input type="text" id="account-email">
+                            <div class="register-alert">
+                                가입되지 않은 이메일입니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-write-wrapper login-content-wrapper">
+                        <div class="resume-write-title">
+                            <span><i class="fas fa-sign-in-alt"></i>비밀번호</span>
+                            <span>비밀번호를 입력해주세요.</span>
+                        </div>
+                        <div class="resume-write-content">
+                            <input type="password" id="account-password">
+                            <div class="register-alert">
+                                비밀번호가 맞지 않습니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-confirm-wrapper login-btn-wrapper">
+                        <div>
+                            <a href="#">이메일 찾기</a>
+                            <a href="#">비밀번호 찾기</a>
+                        </div>
+                        <button>로그인</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </section>
+    <section th:replace="common/footer.html :: footer" />
+</section>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header.html :: header" />
+<body>
+<section id="wrapper">
+    <section th:replace="common/main-nav.html :: main-nav" />
+
+    <section class="app-content">
+
+        <section class="main-content">
+            <div class="my-page-wrapper active my-page-caution-container">
+
+                <div class="my-page-title-wrapper">
+                    <div class="my-page-title">
+                        <span class="main-title">회원 가입</span>
+                    </div>
+                </div>
+
+                <div class="my-page-title-wrapper my-page-caution-sub-container">
+
+                    <div class="my-page-title-wrapper my-page-caution-wrapper">
+                        <div class="my-page-title sub-title register-sub-title">
+                            <span><i class="fas fa-exclamation"></i>약관에 동의해 주세요</span>
+                        </div>
+                        <div class="register-terms-container">
+                            <div class="register-terms-pos">
+                                <div class="register-terms-wrapper">
+                                    <div class="check-group">
+                                        <input type="checkbox" id="ruleCheck1">
+                                        <label for="ruleCheck1"></label>
+                                    </div>
+                                    <div class="register-terms-explain">이용약관에 동의합니다.</div>
+                                    <i class="fas fa-chevron-right" id="arrow1" aria-hidden="true"></i>
+                                </div>
+                                <textarea id="ruleDetail1" readonly="">
+                                        - 1. 목적
+
+                                        본 약관은 디엠티랩스(이하 "회사")가 제공하는 디엠티클라우드 (DMT Cloud) 및 관련 제반 서비스의 이용조건 및 절차, 이용자와 홈페이지의 **권리, 의무, 책임사항**과 **기타 필요한 사항**을 규정함을 목적으로 합니다.
+                                    </textarea>
+                            </div>
+                        </div>
+
+                        <div class="register-terms-container">
+                            <div class="register-terms-pos">
+                                <div class="register-terms-wrapper">
+                                    <div class="check-group">
+                                        <input type="checkbox" id="ruleCheck2">
+                                        <label for="ruleCheck2"></label>
+                                    </div>
+                                    <div class="register-terms-explain">개인 정보 처리 방침에 동의합니다.</div>
+                                    <i class="fas fa-chevron-right" id="arrow1" aria-hidden="true"></i>
+                                </div>
+                                <textarea id="ruleDetail1" readonly="">
+                                        - 1. 목적
+
+                                        본 약관은 디엠티랩스(이하 "회사")가 제공하는 디엠티클라우드 (DMT Cloud) 및 관련 제반 서비스의 이용조건 및 절차, 이용자와 홈페이지의 **권리, 의무, 책임사항**과 **기타 필요한 사항**을 규정함을 목적으로 합니다.
+                                    </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-page-wrapper register-wrapper active">
+
+                <div class="resume-list-container">
+                    <div class="resume-list-header-wrapper">
+                        <label for="" class="custom-label custom-label-bigger">회원 정보 입력
+                        </label>
+
+                    </div>
+
+                    <div class="resume-write-container">
+                        <div class="resume-write-wrapper">
+                            <div class="resume-write-title">
+                                <span><i class="fas fa-pen-alt"></i>가입 역할<span class="required">required</span></span>
+                                <span>가입할 역할을 선택해 주세요.</span>
+                            </div>
+                            <div class="resume-write-content">
+                                <ul class="rg-role-ul">
+                                    <li class="rg-role-li rg-role-li-cl">
+                                        <a class="rg-role-a rg-role-a-cl" id="workerBtn" onclick="clickWorkerRole(this)">
+                                            작업자로 가입할 예정입니다.
+                                        </a>
+                                    </li>
+
+                                    <li class="rg-role-li">
+                                        <a class="rg-role-a" id="managerBtn" onclick="clickManagerRole(this)">
+                                            관리자로 가입할 예정입니다.
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resume-write-wrapper">
+                            <div class="resume-write-title">
+                                <span><i class="fas fa-pen-alt"></i>이메일</span>
+                                <span>이메일 양식에 맞게 입력해주세요. (dmblabs@gmail.com 등)</span>
+                            </div>
+                            <div class="resume-write-content">
+                                <input type="text" id="account-email">
+                                <div class="register-explain">
+                                    이메일 인증이 완료되어야 원활한 서비스를 이용하실 수 있습니다<br/>
+                                    메일함을 확인해주세요.
+                                </div>
+                                <div class="register-alert">
+                                    정확한 양식의 이메일을 입력해주세요!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resume-write-wrapper">
+                            <div class="resume-write-title">
+                                <span><i class="fas fa-pen-alt"></i>비밀번호</span>
+                                <span>4자 이상 10자 이내, 특수문자와 알파벳, 숫자를 1자 이상 혼합해야 합니다.</span>
+                            </div>
+                            <div class="resume-write-content">
+                                <input type="password" id="account-password">
+                                <div class="register-explain">
+                                    특수문자는 *, #, @만 사용할 수 있습니다.
+                                </div>
+                                <div class="register-alert">
+                                    정확한 양식의 비밀번호를 입력해 주세요!
+                                </div>
+                                <input type="password" id="account-password-confirm">
+                                <div class="register-explain">
+                                    비밀번호 확인란입니다. 위에 입력한 비밀번호와 동일하게 입력해주세요.
+                                </div>
+                                <div class="register-alert">
+                                    입력한 비밀번호가 위와 일치하지 않습니다!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resume-write-wrapper">
+                            <div class="resume-write-title">
+                                <span><i class="fas fa-pen-alt"></i>이름<span class="required">required</span></span>
+                                <span>성과 이름을 정확히 기입해 주세요.</span>
+                            </div>
+                            <div class="resume-write-content register-name-pos">
+                                <input type="text" id="account-family-name">
+
+                                <input type="text" id="account-first-name">
+                            </div>
+                        </div>
+
+                        <div class="resume-write-wrapper">
+                            <div class="resume-write-title">
+                                <span><i class="fas fa-pen-alt"></i>연락처<span class="required">required</span></span>
+                                <span>핸드폰 번호를 정확히 기입해 주세요.</span>
+                            </div>
+                            <div class="resume-write-content register-name-pos">
+                                <div class="selectBox phone-select">
+                                    <select name="ability" class="select">
+                                        <option value="010">010</option>
+                                        <option value="011">011</option>
+                                        <option value="017">017</option>
+                                    </select>
+                                    <span class="icoArrow"><i class="fas fa-chevron-down"></i></span>
+                                </div>
+
+
+                                <input type="text" id="account-phone">
+                            </div>
+                        </div>
+
+                        <div class="resume-confirm-wrapper account-register-btn-wrapper">
+                            <button>회원가입</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section th:replace="common/footer.html :: footer" />
+
+</section>
+
+</body>
+</html>
