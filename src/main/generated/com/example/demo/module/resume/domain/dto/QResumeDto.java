@@ -3,7 +3,7 @@ package com.example.demo.module.resume.domain.dto;
 import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.ConstructorExpression;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 
 /**
  * com.example.demo.module.resume.domain.dto.QResumeDto is a Querydsl Projection type for ResumeDto

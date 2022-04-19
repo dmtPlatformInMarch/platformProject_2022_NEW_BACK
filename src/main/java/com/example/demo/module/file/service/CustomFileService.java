@@ -3,8 +3,10 @@ package com.example.demo.module.file.service;
 import com.example.demo.module.file.domain.file.CustomFile;
 import com.example.demo.module.file.domain.file.FileDto;
 import com.example.demo.module.file.domain.file.FileTrDto;
+import com.example.demo.module.file.domain.sentence.TranslatedSentence;
 import com.example.demo.module.file.domain.sentence.TranslatedSentenceForm;
 import com.example.demo.module.file.repository.CustomFileRepository;
+import com.example.demo.module.file.repository.TranslatedSentenceRepository;
 import com.example.demo.module.file.utils.FileUtils;
 import com.example.demo.module.job.domain.domain.Application;
 import com.example.demo.module.job.domain.dto.ApplicationDto;
@@ -38,7 +40,7 @@ import java.util.List;
 public class CustomFileService {
     private final CustomFileRepository customFileRepository;
     private final FileUtils fileUtils;
-
+    private final TranslatedSentenceRepository translatedSentenceRepository;
 
     //uploadTrFiles
     @Transactional
@@ -135,71 +137,87 @@ public class CustomFileService {
 
         List<TranslatedSentenceForm> texts = new ArrayList<>();
 
-        try {
-            FileInputStream fileStream = new FileInputStream(downloadFile);
-            XSSFWorkbook workbook = new XSSFWorkbook(fileStream);
 
-            int rowindex=1;
-            int columnindex=0;
-            //시트 수 (첫번째에만 존재하므로 0을 준다)
-            //만약 각 시트를 읽기위해서는 FOR문을 한번더 돌려준다
-            XSSFSheet sheet=workbook.getSheetAt(0);
-            //행의 수
-            int rows=sheet.getPhysicalNumberOfRows();
-            for(rowindex=1;rowindex<rows;rowindex++){
-                //행을읽는다
-                XSSFRow row=sheet.getRow(rowindex);
+        List<TranslatedSentence> trSentences = translatedSentenceRepository.findBySubFileOrderByColumnIndexAsc(file);
+
+
+        if(trSentences.size() > 0) {
+            for(TranslatedSentence trSentence : trSentences) {
+                System.out.println("trSentence : " + trSentence.getColumnIndex() + " , " + trSentence.getTranslatedText());
                 TranslatedSentenceForm tf = new TranslatedSentenceForm();
-                if(row !=null){
-                    //셀의 수
-                    int cells=row.getPhysicalNumberOfCells();
-                    for(columnindex=0; columnindex<=cells; columnindex++){
-                        //셀값을 읽는다
-                        XSSFCell cell=row.getCell(columnindex);
-                        String value="";
-                        //셀이 빈값일경우를 위한 널체크
-                        if(cell==null){
-                            continue;
-                        }else{
-                            //타입별로 내용 읽기
-                            switch (cell.getCellType()){
-                                case XSSFCell.CELL_TYPE_FORMULA:
-                                    value=cell.getCellFormula();
-                                    break;
-                                case XSSFCell.CELL_TYPE_NUMERIC:
-                                    value=cell.getNumericCellValue()+"";
-                                    break;
-                                case XSSFCell.CELL_TYPE_STRING:
-                                    value=cell.getStringCellValue()+"";
-                                    break;
-                                case XSSFCell.CELL_TYPE_BLANK:
-                                    value=cell.getBooleanCellValue()+"";
-                                    break;
-                                case XSSFCell.CELL_TYPE_ERROR:
-                                    value=cell.getErrorCellValue()+"";
-                                    break;
+
+                tf.setOriginText(trSentence.getOriginText());
+                tf.setTranslatedText(trSentence.getTranslatedText());
+                texts.add(tf);
+            }
+
+        } else {
+            try {
+                FileInputStream fileStream = new FileInputStream(downloadFile);
+                XSSFWorkbook workbook = new XSSFWorkbook(fileStream);
+
+                int rowindex = 1;
+                int columnindex = 0;
+                //시트 수 (첫번째에만 존재하므로 0을 준다)
+                //만약 각 시트를 읽기위해서는 FOR문을 한번더 돌려준다
+                XSSFSheet sheet = workbook.getSheetAt(0);
+                //행의 수
+                int rows = sheet.getPhysicalNumberOfRows();
+                for (rowindex = 1; rowindex < rows; rowindex++) {
+                    //행을읽는다
+                    XSSFRow row = sheet.getRow(rowindex);
+                    TranslatedSentenceForm tf = new TranslatedSentenceForm();
+                    if (row != null) {
+                        //셀의 수
+                        int cells = row.getPhysicalNumberOfCells();
+                        for (columnindex = 0; columnindex <= cells; columnindex++) {
+                            //셀값을 읽는다
+                            XSSFCell cell = row.getCell(columnindex);
+                            String value = "";
+                            //셀이 빈값일경우를 위한 널체크
+                            if (cell == null) {
+                                continue;
+                            } else {
+                                //타입별로 내용 읽기
+                                switch (cell.getCellType()) {
+                                    case XSSFCell.CELL_TYPE_FORMULA:
+                                        value = cell.getCellFormula();
+                                        break;
+                                    case XSSFCell.CELL_TYPE_NUMERIC:
+                                        value = cell.getNumericCellValue() + "";
+                                        break;
+                                    case XSSFCell.CELL_TYPE_STRING:
+                                        value = cell.getStringCellValue() + "";
+                                        break;
+                                    case XSSFCell.CELL_TYPE_BLANK:
+                                        value = cell.getBooleanCellValue() + "";
+                                        break;
+                                    case XSSFCell.CELL_TYPE_ERROR:
+                                        value = cell.getErrorCellValue() + "";
+                                        break;
+                                }
+                            }
+                            System.out.println(rowindex + "번 행 : " + columnindex + "번 열 값은: " + value);
+
+                            if (columnindex == 0) {
+                                if (value == null) value = "";
+                                tf.setOriginText(value);
+                            } else {
+                                if (value == null) value = "";
+                                tf.setTranslatedText(value);
                             }
                         }
-                        System.out.println(rowindex+"번 행 : "+columnindex+"번 열 값은: "+value);
 
-                        if(columnindex == 0) {
-                            if(value==null) value="";
-                            tf.setOriginText(value);
-                        }
-                        else {
-                            if(value==null) value="";
-                            tf.setTranslatedText(value);
-                        }
                     }
+
+                    texts.add(tf);
 
                 }
 
-                texts.add(tf);
-
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
-        }catch(Exception e) {
-            e.printStackTrace();
         }
 
 

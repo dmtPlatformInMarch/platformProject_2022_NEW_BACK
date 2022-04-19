@@ -5,7 +5,7 @@ import static com.querydsl.core.types.PathMetadataFactory.*;
 import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.PathMetadata;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
 
@@ -31,14 +31,14 @@ public class QAccount extends EntityPathBase<Account> {
 
     public final StringPath firstName = createString("firstName");
 
+    public final StringPath fullName = createString("fullName");
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> lastModifiedDate = _super.lastModifiedDate;
 
     public final StringPath lastName = createString("lastName");
-
-    public final StringPath name = createString("name");
 
     public final StringPath password = createString("password");
 

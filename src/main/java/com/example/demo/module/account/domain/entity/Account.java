@@ -30,7 +30,7 @@ public class Account extends BaseEntity {
 
     private String phoneNumber;
 
-    private String name;
+    private String fullName;
 
     //role 추가
     @ManyToOne(fetch = FetchType.EAGER)
@@ -55,5 +55,5 @@ public class Account extends BaseEntity {
         this.resumeCnt -=1;
     }
 
-    public void setName() { this.name = this.firstName + this.lastName; }
+    public void fixName() { this.fullName = this.firstName + this.lastName; }
 }

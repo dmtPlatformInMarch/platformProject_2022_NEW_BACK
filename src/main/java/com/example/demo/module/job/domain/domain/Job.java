@@ -38,4 +38,6 @@ public class Job extends BaseEntity {
 
     private String comment;
 
+    private Long progress;
+
 }

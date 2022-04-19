@@ -3,7 +3,7 @@ package com.example.demo.module.account.domain.dto;
 import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.ConstructorExpression;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 
 /**
  * com.example.demo.module.account.domain.dto.QAccountRoleDto is a Querydsl Projection type for AccountRoleDto

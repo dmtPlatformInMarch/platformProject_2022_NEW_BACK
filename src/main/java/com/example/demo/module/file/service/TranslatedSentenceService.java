@@ -44,6 +44,15 @@ public class TranslatedSentenceService {
     @Transactional
     public List<TranslatedSentence> saveSentences(List<TranslatedSentenceForm> data) {
         CustomFile customFile = customFileRepository.getById(Long.parseLong(data.get(0).getComment()));
+
+        List<TranslatedSentence> trSentences = translatedSentenceRepository.findBySubFileOrderByColumnIndexAsc(customFile);
+
+        if(trSentences.size() > 0) {
+            for(TranslatedSentence translatedSentence : trSentences) {
+                translatedSentenceRepository.delete(translatedSentence);
+            }
+        }
+
         List<TranslatedSentence> result = new ArrayList<>();
 
         int i = 0;
