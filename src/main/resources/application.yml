@@ -3,12 +3,12 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 1234
+    username: platformuser
+    password: platformuser
     #platformuser
     # 182.230.16.82 192.168.0.2
     #url: jdbc:mysql://182.230.16.82:3306/platformDemo?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&autoReconnection=true
-    url: jdbc:mysql://localhost:3306/platformDemo?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&autoReconnection=true
+    url: jdbc:mysql://13.124.101.231:3306/platformDemo?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&autoReconnection=true&allowPublicKeyRetrieval=true
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
