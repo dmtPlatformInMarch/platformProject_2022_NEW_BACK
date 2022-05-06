@@ -2,6 +2,7 @@ package com.example.demo.module.job.domain.domain;
 
 import com.example.demo.module.common.domain.BaseEntity;
 import com.example.demo.module.file.domain.file.CustomFile;
+import com.example.demo.module.payment.domain.Payment;
 import com.example.demo.module.project.domain.entity.Project;
 import lombok.*;
 
@@ -40,4 +41,7 @@ public class Job extends BaseEntity {
 
     private Long progress;
 
+    @OneToOne
+    @JoinColumn(name = "PAYMENT_ID")
+    private Payment payment;
 }

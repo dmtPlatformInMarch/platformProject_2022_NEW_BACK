@@ -47,6 +47,10 @@ public class Account extends BaseEntity {
 
     //상세 프로필 관련 작업 추가
 
+    private String bank;
+    private String bankAccount;
+    private String accountName;
+
     public void incrementResumeCnt() {
         this.resumeCnt += 1;
     }

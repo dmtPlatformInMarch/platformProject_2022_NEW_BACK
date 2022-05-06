@@ -25,6 +25,7 @@ public class AccountService {
     private final ModelMapper modelMapper;
     private final RoleRepository roleRepository;
 
+
     @Transactional
     public AccountRegisteredDto registerNewAccount(AccountRegisterDto accountForm) {
         AccountRegisteredDto result = new AccountRegisteredDto();
